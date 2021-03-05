@@ -58,7 +58,7 @@ public class MainActivity extends AppCompatActivity {
                 return Double.parseDouble(strNumber);
             }
             catch (Exception e) {
-                return -1; // or some value to mark this field is wrong. or make a function validates first
+                return -1;
             }
         }
         else return 0;
