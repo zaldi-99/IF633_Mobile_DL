@@ -18,7 +18,7 @@ import static umn.ac.id.uts_mobile_32082.MainActivity.musicFiles;
 
 public class PlayMusicActivity extends AppCompatActivity {
     TextView song_name, artist_name, duration_played, duration_total;
-    ImageView cover_art, nextBtn, prev_Btn;
+    ImageView cover_art, nextBtn, prevBtn;
     FloatingActionButton playPauseBtn;
     SeekBar seekBar;
     int position = -1;
@@ -31,6 +31,7 @@ public class PlayMusicActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_play_music);
+        getSupportActionBar().setTitle("Now Playing");
         initViews();
         getIntentMethod();
         seekBar.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener() {
@@ -68,7 +69,7 @@ public class PlayMusicActivity extends AppCompatActivity {
         String totalout = "";
         String totalNew = "";
         String seconds = String.valueOf(mCurrentPosition % 60);
-        String minutes = String.valueOf(mCurrentPosition % 60);
+        String minutes = String.valueOf(mCurrentPosition / 60);
         totalout = minutes + ":" +seconds;
         totalNew = minutes + ":" + "0" +seconds;
         if (seconds.length() == 1){
@@ -107,7 +108,7 @@ public class PlayMusicActivity extends AppCompatActivity {
         duration_total = findViewById(R.id.durasiAkhir);
         cover_art = findViewById(R.id.coverArt);
         nextBtn = findViewById(R.id.btnNext);
-        prev_Btn = findViewById(R.id.btnPrevious);
+        prevBtn = findViewById(R.id.btnPrevious);
         playPauseBtn = findViewById(R.id.play_pause);
         seekBar = findViewById(R.id.seekBar);
     }

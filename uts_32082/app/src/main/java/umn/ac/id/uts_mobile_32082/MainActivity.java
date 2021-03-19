@@ -60,7 +60,7 @@ public class MainActivity extends AppCompatActivity {
                     , REQUEST_CODE);
         }
         else{
-            Toast.makeText(this, "Permission Granted", Toast.LENGTH_SHORT).show();
+
             musicFiles = getAllAudio(this);
 
         }
@@ -71,7 +71,7 @@ public class MainActivity extends AppCompatActivity {
         super.onRequestPermissionsResult(requestCode, permissions, grantResults);
         if (requestCode == REQUEST_CODE){
             if (grantResults[0] == PackageManager.PERMISSION_GRANTED){
-                Toast.makeText(this, "Permission Granted", Toast.LENGTH_SHORT).show();
+
                 musicFiles = getAllAudio(this);
             }else{
                 ActivityCompat.requestPermissions(MainActivity.this, new String[]{Manifest.permission.WRITE_EXTERNAL_STORAGE}

@@ -54,7 +54,7 @@ public class MusicAdapter extends RecyclerView.Adapter<MusicAdapter.MyViewHolder
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(mContext, PlayMusicActivity.class);
-                intent.putExtra("Position", position);
+                intent.putExtra("position", position);
                 mContext.startActivity(intent);
             }
         });
