@@ -12,7 +12,8 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Uts_mobile_32082">
         <activity
-            android:name=".PlayMusicActivity" />
+            android:name=".PlayMusicActivity"
+            android:parentActivityName=".ListMusicActivity"/>
         <activity
             android:name=".ListMusicActivity"
             android:parentActivityName=".MainActivity"/>

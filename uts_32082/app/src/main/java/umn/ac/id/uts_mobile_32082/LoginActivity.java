@@ -15,6 +15,7 @@ public class LoginActivity extends AppCompatActivity {
     Button btnLogin;
     String uname = "uasmobile";
     String pass = "uasmobilegenap";
+    static boolean wasLogin;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -37,9 +38,8 @@ public class LoginActivity extends AppCompatActivity {
                 else if (username.getText().toString().equals(uname)){
                     //check password
                     if (password.getText().toString().equals(pass)){
-                        //change route nanti
-                        //sekarang masih toast
                         Toast.makeText(LoginActivity.this,"Login Success", Toast.LENGTH_LONG).show();
+                        wasLogin = true;
                         moveToListMusic();
                     }else{
                         Toast.makeText(LoginActivity.this,"Invalid username/password", Toast.LENGTH_LONG).show();

@@ -10,6 +10,8 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
+
+import static umn.ac.id.uts_mobile_32082.LoginActivity.wasLogin;
 import static umn.ac.id.uts_mobile_32082.MainActivity.musicFiles;
 
 public class ListMusicActivity extends AppCompatActivity {
@@ -22,7 +24,7 @@ public class ListMusicActivity extends AppCompatActivity {
         setContentView(R.layout.activity_list_music);
         getSupportActionBar().setTitle("List Music");
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
-        showStartDialog();
+//        showStartDialog();
 
         recyclerView = (RecyclerView) findViewById(R.id.recyclerView);
         recyclerView.setHasFixedSize(true);
@@ -31,6 +33,10 @@ public class ListMusicActivity extends AppCompatActivity {
             musicAdapter = new MusicAdapter(this, musicFiles);
             recyclerView.setAdapter(musicAdapter);
             recyclerView.setLayoutManager(new LinearLayoutManager(this, RecyclerView.VERTICAL, false));
+        }
+        if(wasLogin){
+            showStartDialog();
+            wasLogin = false;
         }
     }
 
