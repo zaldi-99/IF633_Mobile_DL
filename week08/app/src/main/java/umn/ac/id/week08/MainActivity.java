@@ -21,25 +21,25 @@ public class MainActivity extends AppCompatActivity {
         btnTutor1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                goToTutorial1();
+                openTutor1();
             }
         });
 
         btnTutor2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                goToTutorial2();
+                openTutor2();
             }
         });
         
     }
-    private void goToTutorial1() {
+    private void openTutor1() {
         Intent intent = new Intent(this, Tutorial1.class);
         startActivity(intent);
 
     }
 
-    private void goToTutorial2() {
+    private void openTutor2() {
         Intent intent = new Intent(this, Tutorial2.class);
         startActivity(intent);
     }
